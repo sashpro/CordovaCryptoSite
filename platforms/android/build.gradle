@@ -182,7 +182,7 @@ android {
     lintOptions {
         abortOnError false;
     }
-    compileSdkVersion cdvCompileSdkVersion
+    compileSdkVersion 21
     buildToolsVersion cdvBuildToolsVersion
     if (Boolean.valueOf(cdvBuildMultipleApks)) {
         productFlavors {
