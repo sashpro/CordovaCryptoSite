@@ -254,13 +254,20 @@ android {
             signingConfig signingConfigs.config
         }
     }
+    productFlavors {
+        armv7 {
+            minSdkVersion 19
+            signingConfig signingConfigs.config
+            targetSdkVersion 22
+        }
+    }
 }
 
 dependencies {
     compile fileTree(include: '*.jar', dir: 'libs')
     // SUB-PROJECT DEPENDENCIES START
-    debugCompile(project(path: "CordovaLib", configuration: "debug"))
-    releaseCompile(project(path: "CordovaLib", configuration: "release"))
+    debugCompile project(path: 'CordovaLib', configuration: 'debug')
+    compile project(path: 'CordovaLib', configuration: 'release')
     // SUB-PROJECT DEPENDENCIES END
 }
 
